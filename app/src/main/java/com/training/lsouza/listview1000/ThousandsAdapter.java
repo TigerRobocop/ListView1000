@@ -17,15 +17,12 @@ public class ThousandsAdapter extends ArrayAdapter<Item> {
     public ThousandsAdapter(Context context, List<Item> objects) {
         super(context, 0, objects);
     }
-
-
+    
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        //return super.getView(position, convertView, parent);
-
+        
         ViewHolder mVH;
-
-
+        
         if (convertView == null){
             convertView = LayoutInflater.from(
                     getContext()).inflate(R.layout.item_layout, null);
@@ -33,7 +30,7 @@ public class ThousandsAdapter extends ArrayAdapter<Item> {
             mVH = new ViewHolder();
             mVH.txtId = (TextView)convertView.findViewById(R.id.textView_id);
             mVH.txtName = (TextView) convertView.findViewById(R.id.textView_name);
-
+            
             convertView.setTag(mVH);
 
             Log.v("LIV", "Item created: " + position);
@@ -48,11 +45,9 @@ public class ThousandsAdapter extends ArrayAdapter<Item> {
             mVH.txtId.setText(item.id);
             mVH.txtName.setText(item.name);
         }
-
         return convertView;
     }
 }
-
 
 class ViewHolder {
     TextView txtId;
